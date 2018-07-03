@@ -9,7 +9,7 @@ var options = {
 };
 
 var req = https.request(options, function (res) {
-  var respondBody = "";
+  var responseBody = "";
 
   console.log("Response from server started.");
   console.log(`Server Status: ${res.statusCode} `);
