@@ -4,7 +4,7 @@ var fs = require("fs");
 var options = {
   hostname: "en.wikipedia.org",
   port: 443,
-  parth: "/wiki/George_Washington",
+  path: "/wiki/George_Washington",
   method: "GET"
 };
 
@@ -23,8 +23,8 @@ var req = https.request(options, function (res) {
 
   res.on("data", function (chunk) {
     console.log(`--chunk-- ${chunk.length}`);
-    respondBody += chunk;
-  })
+    responseBody += chunk;
+  });
 
   res.on("end", function () {
     fs.writeFile("george-washington.html", responseBody, function (err) {
